@@ -23,11 +23,13 @@ kind: Service
 metadata:
   name: healthcare
 spec:
-  type: NodePort  # Service type correctly placed here
+  type: NodePort
   selector:
     app: healthcare
   ports:
-  - port: 80
-    targetPort: 8082
-    nodeport: 30007
+    - protocol: TCP
+      port: 80
+      targetPort: 8082
+      nodePort: 30007  # Correct placement of nodePort
+
 
