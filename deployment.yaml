@@ -23,10 +23,10 @@ kind: Service
 metadata:
   name: healthcare
 spec:
+  type: ClusterIP  # Service type correctly placed here
   selector:
     app: healthcare
-    type: clusterIP
   ports:
   - port: 80
     targetPort: 8082
-    nodePort: 30007
+
